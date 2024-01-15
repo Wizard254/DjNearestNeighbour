@@ -22,7 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 
-    path('nn/', dnn_views.nn),
-    path('nn2/', dnn_views.NNView.as_view()),
-    path('userz/', dnn_views.ListUsers.as_view()),
+    path('nn/', dnn_views.GetNearestNeighbour.as_view()),
 ]
