@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import dnn.views as dnn_views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
 
     path('nn/', dnn_views.GetNearestNeighbour.as_view()),
+    path('', TemplateView.as_view(template_name='home.html')),
 ]
