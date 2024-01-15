@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import math
+from typing import Tuple, List
 
 
 @dataclass
@@ -17,7 +18,7 @@ class DistComparison:
     pass
 
 
-def least(dcs: list[DistComparison]):
+def least(dcs: list[DistComparison]) -> list[DistComparison]:
     holder = []
     for d in dcs:
         holder.append(d.d)
@@ -32,7 +33,7 @@ def distance(a: Coord, b: Coord) -> float:
     pass
 
 
-def get_nn(coords: list[Coord]):
+def get_nn(coords: list[Coord]) -> list[DistComparison]:
     dcs = []
     for i, c in enumerate(coords):
         for j, cc in enumerate(coords):
@@ -46,7 +47,7 @@ def get_nn(coords: list[Coord]):
     pass
 
 
-def get_nn_str(s: str) -> (bool, list, str):
+def get_nn_str(s: str) -> tuple[bool, None, str] | tuple[bool, list[DistComparison], None]:
     coords = s.split(';')
     dcs = []
     for c in coords:

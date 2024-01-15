@@ -7,6 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 # from snippets.models import Snippet
 # from snippets.serializers import SnippetSerializer
+from dnn.utils.nn import get_nn_str
 
 
 # @api_view(['GET', 'POST'])
@@ -21,6 +22,20 @@ def nn(request):
         pass
 
     elif request.method == 'POST':
+        s = request.data
+        ok, least, err = get_nn_str(s)
+        if not ok:
+            return Response({'detail': err}, status=status.HTTP_400_BAD_REQUEST)
+            pass
+
+        if len(least) == 1:
+            d = least[0]
+            pass
+        else:
+            d = least
+            pass
+
+        return Response(d)
         pass
 
 #
