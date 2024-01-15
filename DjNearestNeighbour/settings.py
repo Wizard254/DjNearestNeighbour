@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     # Add 'rest_framework' to your INSTALLED_APPS setting.
     'rest_framework',
+    'dnn',
 ]
 
 MIDDLEWARE = [
