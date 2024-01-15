@@ -5,7 +5,7 @@ from django.db import models
 
 class NNModel(models.Model):
     # A database index will be created for this field
-    coords = models.CharField(db_index=True, unique=True)
-    nn = models.CharField()
+    coords = models.CharField(db_index=True, unique=True, max_length=500)
+    nn = models.CharField(max_length=500)
     modified = models.DateTimeField(auto_now=True)
     pass
