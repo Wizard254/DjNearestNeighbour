@@ -33,13 +33,14 @@ class GetNearestNeighbour(APIView):
 
     def get(self, request, format=None):
         """
-        Return a list of all users.
+        Allow display of the default browsable API
         """
         return Response('')
 
     def post(self, request, format=None):
         """
-        Return a list of all users.
+        Given POST request data of a set of points on a grid as semicolon separated values,
+        finds the points that are closest to each other, as response
         """
         # We registered a plain text parser for this view, the data should be some string
         s: str = request.data
