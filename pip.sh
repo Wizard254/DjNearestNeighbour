@@ -1,10 +1,3 @@
-pip install django
-pip install djangorestframework
+pip install django djangorestframework
 
 #ssh-keygen -t rsa
-
-
-
-
-
-
