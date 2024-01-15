@@ -8,11 +8,13 @@ from dnn.models import NNModel
 class NNForm(forms.ModelForm):
     class Meta:
         model = NNModel
-        exclude = ["nn"]
+        exclude = ['nn']
+        pass
+    pass
 
 
 class NNAdmin(admin.ModelAdmin):
-    list_display = ["coords", "nn"]
+    list_display = ["coords", "nn", "modified"]
     form = NNForm
 
 

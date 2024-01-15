@@ -6,6 +6,6 @@ from django.db import models
 class NNModel(models.Model):
     # A database index will be created for this field
     coords = models.CharField(db_index=True, unique=True, max_length=500)
-    nn = models.CharField(max_length=500)
+    nn = models.CharField(max_length=500, null=True)
     modified = models.DateTimeField(auto_now=True)
     pass
